@@ -1,8 +1,5 @@
 {
     "github": {
         "silent": true
-    },
-    "functions": {
-      "maxDuration": 60
     }
 }
