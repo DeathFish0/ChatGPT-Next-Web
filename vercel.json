@@ -2,4 +2,9 @@
     "github": {
         "silent": true
     }
+    "functions": {
+    "api/**/*.js": {
+      "maxDuration": 60
+    }
+  }
 }
