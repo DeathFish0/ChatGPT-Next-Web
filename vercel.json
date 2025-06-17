@@ -3,7 +3,7 @@
         "silent": true
     }
     "functions": {
-    "aap/api/**/*.js": {
+    "app/api/**/*.ts": {
       "maxDuration": 60
     }
   }
