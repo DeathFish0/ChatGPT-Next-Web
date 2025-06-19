@@ -1,4 +1,4 @@
-name               = "tobnoonechatgptnextweb"
+name = "tobnoonegptchatweb"
 main               = "./public/serviceWorker.js"  # 你的 SW 脚本入口
 compatibility_date = "2025-06-19"               # 填今天或近一年内的日期
 workers_dev        = true                        # 是否启用 workers.dev 预览
