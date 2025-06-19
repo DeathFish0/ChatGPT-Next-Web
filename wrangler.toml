@@ -6,11 +6,9 @@ workers_dev        = true
 #    这些文件会被 Wrangler 当静态资源一起部署
 [site]
 bucket  = "./public"
-include = ["**"]
-exclude = []
 
 # ② 指定部署的 Worker 脚本入口、格式，以及静态资源目录
-[build.upload]
+[upload]
 main   = "./public/serviceWorker.js"  # 你的自定义 SW
 format = "service-worker"             # 或 "modules" 看你脚本写法
 dir    = "./public"                   # 同上，静态资源目录
