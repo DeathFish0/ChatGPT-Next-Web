@@ -1,20 +1,18 @@
-# wrangler.toml
+name               = "tobnoonechatgptnextweb"
+compatibility_date = "2025-06-19"
+workers_dev        = true
 
-name               = "tobnoonechatgptnextweb" 
-compatibility_date = "2025-06-19"            
-
-# ---------- 告诉 Wrangler 我要做一个静态站点 ----------
+# ① 指定上传的静态资源目录
+#    这些文件会被 Wrangler 当静态资源一起部署
 [site]
-bucket      = "./public"     # 你的静态资源目录
+bucket  = "./public"
+include = ["**"]
+exclude = []
 
-# ---------- 构建 & 上传 配置（V2 推荐写法） ----------
-[build]
-# publish 前会自动执行这条命令，生成 workers-site/index.js
-command = "wrangler site build ./public"
-
-# upload 配置里指明了 entry-point 和 打包格式
+# ② 指定部署的 Worker 脚本入口、格式，以及静态资源目录
 [build.upload]
-format = "service-worker"              # 或 "modules"，看你用的是哪种脚本格式
-main   = "workers-site/index.js"       # site build 产出的文件
-dir    = "./publish"                   # 要上传的静态资源目录
+main   = "./public/serviceWorker.js"  # 你的自定义 SW
+format = "service-worker"             # 或 "modules" 看你脚本写法
+dir    = "./public"                   # 同上，静态资源目录
+
 
