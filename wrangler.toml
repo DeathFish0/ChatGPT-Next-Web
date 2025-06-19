@@ -1,6 +1,6 @@
 # wrangler.toml
 
-name               = "tobnoone_chatgpt_next_web"       # 你的项目名
+name               = "tobnoonechatgptnextweb"       # 你的项目名
 compatibility_date = "2024-06-19"           # cf-worker 兼容日期，必须填
 
 # 如果你只需要上传静态资源（没有自定义 Worker 逻辑）：
