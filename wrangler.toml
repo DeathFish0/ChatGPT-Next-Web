@@ -1,16 +1,10 @@
 name               = "tobnoonechatgptnextweb"
-compatibility_date = "2025-06-19"
-workers_dev        = true
+main               = "./public/serviceWorker.js"  # 你的 SW 脚本入口
+compatibility_date = "2025-06-19"               # 填今天或近一年内的日期
+workers_dev        = true                        # 是否启用 workers.dev 预览
+format             = "service-worker"            # 你的脚本写法：service-worker 或 modules
 
-# ① 指定上传的静态资源目录
-#    这些文件会被 Wrangler 当静态资源一起部署
-[site]
-bucket  = "./public"
-
-# ② 指定部署的 Worker 脚本入口、格式，以及静态资源目录
-[upload]
-main   = "./public/serviceWorker.js"  # 你的自定义 SW
-format = "service-worker"             # 或 "modules" 看你脚本写法
-dir    = "./public"                   # 同上，静态资源目录
-
-
+[site]                                         
+  bucket  = "./public"           # 要当静态资源上传的目录
+  include = ["**/*"]             # （可选）白名单
+  exclude = ["serviceWorker.js"] # （可选）把 SW 脚本排除在静态资源之外
